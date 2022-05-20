@@ -6,18 +6,16 @@
 #    By: ancarbon <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/14 16:26:20 by ancarbon          #+#    #+#              #
-#    Updated: 2022/03/22 18:05:18 by ancarbon         ###   ########.fr        #
+#    Updated: 2022/03/28 19:28:16 by ancarbon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRCS = ft_printf.c
-
-#BNUS =
+SRCS = ft_printf.c ft_parse.c ft_conversion.c ft_printf_utils.c tprint_utils.c \
+convert_char.c
 
 OBJS = ${SRCS:.c=.o}
-#BONUSOBJS = ${BNUS:.c=.o}
 
 CC = gcc
 RM = rm -f
@@ -28,15 +26,12 @@ LIBC = ar -crs
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}: ${OBJS}
-	${LIBC} ${OBJS}
-
-# bonus: ${BONUSOBJS}
-#	${LIBC} ${BONUSOBJS}
+	${LIBC} ${NAME} ${OBJS}
 
 all: ${NAME}
 
 clean:
-	${RM} ${OBJS} ${BONUSOBJS}
+	${RM} ${OBJS}
 
 fclean: clean
 	${RM} ${NAME}
