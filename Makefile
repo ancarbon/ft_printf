@@ -5,20 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ancarbon <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/14 16:26:20 by ancarbon          #+#    #+#              #
-#    Updated: 2022/03/28 19:28:16 by ancarbon         ###   ########.fr        #
+#    Created: 2022/05/20 16:29:54 by ancarbon          #+#    #+#              #
+#    Updated: 2022/05/21 23:35:22 by ancarbon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRCS = ft_printf.c ft_parse.c ft_conversion.c ft_printf_utils.c tprint_utils.c \
-convert_char.c
+SRCS = ft_printf.c ft_parse.c ft_char_utils.c \
+ft_decnbr_utils.c ft_hex_utils.c ft_ptr_utils.c
 
 OBJS = ${SRCS:.c=.o}
 
 CC = gcc
-RM = rm -f
+RM = rm -rf
 CFLAGS = -Wall -Wextra -Werror
 LIBC = ar -crs
 

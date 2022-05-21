@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert_str.c                                      :+:      :+:    :+:   */
+/*   ft_char_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancarbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/28 20:20:23 by ancarbon          #+#    #+#             */
-/*   Updated: 2022/03/28 21:02:24 by ancarbon         ###   ########.fr       */
+/*   Created: 2022/05/21 23:13:24 by ancarbon          #+#    #+#             */
+/*   Updated: 2022/05/21 23:14:35 by ancarbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*shorter_str(char *s, char *fstr, t_print *tab, size_t i)
+size_t	ft_strlen(char *str)
 {
-	if (i < tab->width)
-	{
-		if ()
-	}
+	size_t	len;
+
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
 }
 
-void	convert_str(char *s, t_print *tab)
+int	i_putchar(char c)
 {
-	size_t	i;
-	char	*fstr;
+	return (write(1, &c, 1));
+}
 
-	i = ft_strlen(s);
-	if (tab->precision < i)
-	{
+int	i_putstr(char *str)
+{
+	int	i;
 
-	}
+	i = 0;
+	while (str[i])
+		i += i_putchar(str[i]);
+	return (i);
 }

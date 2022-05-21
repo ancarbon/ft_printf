@@ -1,40 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse.c                                         :+:      :+:    :+:   */
+/*   ft_hex_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancarbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/26 21:29:28 by ancarbon          #+#    #+#             */
-/*   Updated: 2022/03/28 19:53:45 by ancarbon         ###   ########.fr       */
+/*   Created: 2022/05/21 23:15:33 by ancarbon          #+#    #+#             */
+/*   Updated: 2022/05/21 23:16:31 by ancarbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_parse(const char *string, va_list arg)
+int	count_hex(long x)
 {
-	// printf("2\n");
-	t_print	*tab;
+	int	i;
 
-	tab = (t_print *)malloc(sizeof(t_print));
-	if (!tab)
-		return (-1);
-	ft_structinit(tab);
-	tab->i = 0;
-	tab->nprnt = 0;
-	while(string[tab->i])
+	i = 0;
+	while (x != 0)
 	{
-		if (string[tab->i] == '%')
-		{
-			tab->i++;
-			ft_getformat(string, tab, arg);
-		}
+		x /= 16;
+		i++;
+	}
+	return (i);
+}
+
+int	i_puthex(long i, char c)
+{
+	if (i == 0)
+		return (i_putchar('0'));
+	else
+		print_hex(i, c);
+	return (count_hex(i));
+}
+
+void	print_hex(long i, char c)
+{
+	if (i > 17)
+	{
+		print_hex(i / 16, c);
+		print_hex(i % 16, c);
+	}
+	else
+	{
+		if (i < 10)
+			i_putchar(i + 48);
 		else
 		{
-			tab->nprnt += write(1, &string[tab->i], 1);
-			tab->i++;
+			if (c == 'X')
+				i_putchar(i + 55);
+			else if (c == 'x')
+				i_putchar(i + 87);
 		}
 	}
-	return (tab->nprnt);
 }
