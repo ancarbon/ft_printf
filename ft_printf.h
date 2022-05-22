@@ -6,7 +6,7 @@
 /*   By: ancarbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 15:55:04 by ancarbon          #+#    #+#             */
-/*   Updated: 2022/05/22 08:49:08 by ancarbon         ###   ########.fr       */
+/*   Updated: 2022/05/22 09:17:16 by ancarbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int		i_puthex(long i, char c);
 int		count_hex(long x);
 void	print_hex(long i, char c);
 
+int		count_ptr(unsigned long x);
 int		i_put_ptr(unsigned long p);
 void	print_ptr(unsigned long p);
 

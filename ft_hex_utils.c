@@ -6,7 +6,7 @@
 /*   By: ancarbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 23:15:33 by ancarbon          #+#    #+#             */
-/*   Updated: 2022/05/22 08:32:25 by ancarbon         ###   ########.fr       */
+/*   Updated: 2022/05/22 09:18:32 by ancarbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	i_puthex(long i, char c)
 
 void	print_hex(long i, char c)
 {
-	if (i > 16)
+	if (i >= 16)
 	{
 		print_hex(i / 16, c);
 		print_hex(i % 16, c);
