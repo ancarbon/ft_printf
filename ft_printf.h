@@ -6,7 +6,7 @@
 /*   By: ancarbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 15:55:04 by ancarbon          #+#    #+#             */
-/*   Updated: 2022/05/21 23:31:10 by ancarbon         ###   ########.fr       */
+/*   Updated: 2022/05/22 08:45:39 by ancarbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int		count_hex(long x);
 void	print_hex(long i, char c);
 
 // prova
-void	ptr_conv(unsigned long long num);
+int		i_put_ptr(unsigned long p);
+void	print_ptr(unsigned long p);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ancarbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 16:21:59 by ancarbon          #+#    #+#             */
-/*   Updated: 2022/05/21 23:35:38 by ancarbon         ###   ########.fr       */
+/*   Updated: 2022/05/22 08:39:44 by ancarbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int	ft_getformat(va_list arg, char c)
 		ret = i_putnbr(va_arg(arg, int));
 	else if (c == 'u')
 		ret = i_put_uns_nbr(va_arg(arg, unsigned int));
-	// else if (c == 'p')
-	// 	ret = ft_convert_ptr(arg);
+	else if (c == 'p')
+		ret = i_put_ptr(va_arg(arg, unsigned long));
 	else if (c == 'x' || c == 'X')
 		ret = i_puthex(va_arg(arg, long), c);
 	else if (c == '%')
