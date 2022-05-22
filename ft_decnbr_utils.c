@@ -6,12 +6,11 @@
 /*   By: ancarbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 16:56:41 by ancarbon          #+#    #+#             */
-/*   Updated: 2022/05/21 23:22:28 by ancarbon         ###   ########.fr       */
+/*   Updated: 2022/05/22 10:45:07 by ancarbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
 
 int	nlength(unsigned long i)
 {
