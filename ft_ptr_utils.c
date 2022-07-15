@@ -6,13 +6,13 @@
 /*   By: ancarbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 23:38:41 by ancarbon          #+#    #+#             */
-/*   Updated: 2022/05/22 10:44:42 by ancarbon         ###   ########.fr       */
+/*   Updated: 2022/07/15 13:10:58 by ancarbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	count_ptr(unsigned long x)
+int	count_ptr(unsigned long long x)
 {
 	int	i;
 
@@ -25,7 +25,7 @@ int	count_ptr(unsigned long x)
 	return (i);
 }
 
-int	i_put_ptr(unsigned long p)
+int	i_put_ptr(unsigned long long p)
 {
 	i_putstr("0x");
 	if (p == 0)
@@ -35,18 +35,18 @@ int	i_put_ptr(unsigned long p)
 	return (count_ptr(p) + 2);
 }
 
-void	print_ptr(unsigned long p)
+void	print_ptr(unsigned long long p)
 {
-	if (p > 16)
+	if (p >= 16)
 	{
 		print_ptr(p / 16);
 		print_ptr(p % 16);
 	}
 	else
 	{
-		if (p < 10)
+		if (p <= 9)
 			i_putchar(p + 48);
 		else
-			i_putchar(p + 87);
+			i_putchar(p - 10 + 'a');
 	}
 }

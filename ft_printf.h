@@ -6,7 +6,7 @@
 /*   By: ancarbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 15:55:04 by ancarbon          #+#    #+#             */
-/*   Updated: 2022/05/22 09:17:16 by ancarbon         ###   ########.fr       */
+/*   Updated: 2022/07/15 13:20:17 by ancarbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ int		nlength(unsigned long i);
 int		i_putnbr(int nb);
 int		i_put_uns_nbr(unsigned int nb);
 
-int		i_puthex(long i, char c);
-int		count_hex(long x);
-void	print_hex(long i, char c);
+int		i_puthex(unsigned int i, char c);
+int		count_hex(unsigned int x);
+void	print_hex(unsigned int i, char c);
 
-int		count_ptr(unsigned long x);
-int		i_put_ptr(unsigned long p);
-void	print_ptr(unsigned long p);
+int		count_ptr(unsigned long long x);
+int		i_put_ptr(unsigned long long p);
+void	print_ptr(unsigned long long p);
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: ancarbon <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 23:15:33 by ancarbon          #+#    #+#             */
-/*   Updated: 2022/05/22 10:44:30 by ancarbon         ###   ########.fr       */
+/*   Updated: 2022/07/15 13:18:54 by ancarbon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	count_hex(long x)
+int	count_hex(unsigned int x)
 {
 	int	i;
 
@@ -25,7 +25,7 @@ int	count_hex(long x)
 	return (i);
 }
 
-int	i_puthex(long i, char c)
+int	i_puthex(unsigned int i, char c)
 {
 	if (i == 0)
 		return (i_putchar('0'));
@@ -34,7 +34,7 @@ int	i_puthex(long i, char c)
 	return (count_hex(i));
 }
 
-void	print_hex(long i, char c)
+void	print_hex(unsigned int i, char c)
 {
 	if (i >= 16)
 	{
@@ -43,14 +43,14 @@ void	print_hex(long i, char c)
 	}
 	else
 	{
-		if (i < 10)
+		if (i <= 9)
 			i_putchar(i + 48);
 		else
 		{
 			if (c == 'X')
-				i_putchar(i + 55);
+				i_putchar(i - 10 + 'A');
 			else if (c == 'x')
-				i_putchar(i + 87);
+				i_putchar(i - 10 + 'a');
 		}
 	}
 }
